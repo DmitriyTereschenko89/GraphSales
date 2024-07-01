@@ -6,4 +6,9 @@
     <Nullable>disable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GraphSales.Data\GraphSales.Data.csproj" />
+    <ProjectReference Include="..\GraphSales.Domain\GraphSales.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
