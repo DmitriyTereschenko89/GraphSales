@@ -1,7 +1,7 @@
-﻿namespace GraphSales.Domain.Common
-{
-    using GraphSales.Domain.Entities;
+﻿using GraphSales.Domain.Entities;
 
+namespace GraphSales.Domain.Common
+{
     public interface ISaleRepository
     {
         Task SaveSalesAsync(IList<SaleModel> sales);

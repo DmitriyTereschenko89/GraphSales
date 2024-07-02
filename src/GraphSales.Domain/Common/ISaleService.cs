@@ -1,7 +1,7 @@
-﻿namespace GraphSales.Domain.Common
-{
-    using GraphSales.Domain.Entities;
+﻿using GraphSales.Domain.Entities;
 
+namespace GraphSales.Domain.Common
+{
     public interface ISaleService
     {
         List<SaleModel> GetSalesByPeriod(DateTimeOffset startPeriod, DateTimeOffset endPeriod);
