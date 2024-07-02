@@ -5,6 +5,6 @@ namespace GraphSales.Domain.Common
     public interface ISaleRepository
     {
         Task SaveSalesAsync(IList<SaleModel> sales);
-        List<SaleModel> GetSalesByPeriod(DateTimeOffset startPeriod, DateTimeOffset endPeriod);
+        Task<List<SaleModel>> GetSalesByPeriodAsync(DateTimeOffset startPeriod, DateTimeOffset endPeriod);
     }
 }

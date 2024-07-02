@@ -1,4 +1,5 @@
-﻿using GraphSales.Domain.Common;
+﻿using System.ComponentModel.DataAnnotations;
+using GraphSales.Domain.Common;
 using GraphSales.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,11 +10,11 @@ namespace GraphSales.Api.Controllers
     {
         private readonly ISaleService _saleService = saleService;
 
-        [HttpPost]
+        [HttpGet]
         [Route("/")]
-        public async Task<List<SaleModel>> GetSalesByPeriod([FromBody] PeriodModel period)
+        public async Task<List<SaleModel>> GetSalesByPeriod([Required] DateTimeOffset start, [Required] DateTimeOffset end)
         {
-            var sales = await Task.Run(() => _saleService.GetSalesByPeriod(period.Start, period.End));
+            var sales = await _saleService.GetSalesByPeriodAsync(start, end);
 
             return sales;
         }
