@@ -2,22 +2,20 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using System.Threading.Tasks;
     using GraphSales.Domain.Common;
     using GraphSales.Domain.Entities;
-    using GraphSales.Domain.Enums;
 
-    public class SaleService (ISaleRepository saleRepository) : ISaleService
+    public class SaleService(ISaleRepository saleRepository) : ISaleService
     {
         private readonly ISaleRepository _saleRepository = saleRepository;
 
-        public IQueryable<SaleModel> GetSalesByPeriod(SaleInterval period, DateTimeOffset startPeriod, DateTimeOffset endPeriod)
+        public List<SaleModel> GetSalesByPeriod(DateTimeOffset startPeriod, DateTimeOffset endPeriod)
         {
-            return _saleRepository.GetSalesByPeriod(period, startPeriod, endPeriod);
+            return _saleRepository.GetSalesByPeriod(startPeriod, endPeriod);
         }
 
-        public async Task SaveSalesAsync(List<SaleModel> sales)
+        public async Task SaveSalesAsync(IList<SaleModel> sales)
         {
             await _saleRepository.SaveSalesAsync(sales);
         }

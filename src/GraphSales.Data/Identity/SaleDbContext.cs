@@ -4,11 +4,11 @@
     using Microsoft.EntityFrameworkCore;
 
     public class SaleDbContext : DbContext
-	{
-        public SaleDbContext(DbContextOptions options) : base(options) 
+    {
+        public SaleDbContext(DbContextOptions options) : base(options)
         {
             _ = Database.EnsureCreated();
         }
         public DbSet<SaleModel> Sales { get; set; }
-	}
+    }
 }
