@@ -5,7 +5,7 @@
 
     public class SaleDbContext : DbContext
     {
-        public SaleDbContext(DbContextOptions options) : base(options)
+        public SaleDbContext(DbContextOptions<SaleDbContext> options) : base(options)
         {
             _ = Database.EnsureCreated();
         }
