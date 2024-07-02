@@ -15,6 +15,7 @@ namespace GraphSales.Api.Controllers
         public async Task<List<SaleModel>> GetSalesByPeriod([Required] DateTimeOffset start, [Required] DateTimeOffset end)
         {
             var sales = await _saleService.GetSalesByPeriodAsync(start, end);
+            sales.Sort((a, b) => a.Finalized.Date.CompareTo(b.Finalized.Date));
 
             return sales;
         }
