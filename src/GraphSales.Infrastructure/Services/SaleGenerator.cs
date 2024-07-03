@@ -13,7 +13,7 @@ namespace GraphSales.Infrastructure.Services
             var rnd = new Random();
             var sale = new SaleModel()
             {
-                Ammount = Math.Round(Convert.ToDecimal((rnd.NextDouble() * (_options.AmmountMax - _options.AmmountMin)) + _options.AmmountMin), _options.DecimalRound),
+                Amount = Math.Round(Convert.ToDecimal((rnd.NextDouble() * (_options.AmountMax - _options.AmountMin)) + _options.AmountMin), _options.DecimalRound),
                 Finalized = new DateTimeOffset(rnd.NextInt64(_options.StartDateTicks, _options.EndDateTicks), TimeSpan.Zero)
             };
 
