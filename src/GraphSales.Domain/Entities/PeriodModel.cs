@@ -1,11 +1,12 @@
-﻿using GraphSales.Domain.Enums;
-
-namespace GraphSales.Domain.Entities
+﻿namespace GraphSales.Domain.Entities
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class PeriodModel
     {
-        public SaleInterval SaleInterval { get; set; }
+        [Required]
         public DateTimeOffset Start { get; set; }
+        [Required]
         public DateTimeOffset End { get; set; }
     }
 }

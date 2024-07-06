@@ -1,6 +1,7 @@
 ﻿using System.Text.Encodings.Web;
 using System.Text.Json;
 using GraphSales.Api.Middleware;
+using GraphSales.Api.Profiles;
 using GraphSales.Data.Identity;
 using GraphSales.Domain.Common;
 using GraphSales.Domain.Entities;
@@ -36,6 +37,18 @@ builder.Services.AddSwaggerDocument(options =>
     };
 });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("DefaultPolicy", builder =>
+    {
+        _ = builder
+               .AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader();
+    });
+});
+
+builder.Services.AddAutoMapper(typeof(SaleProfile));
 builder.Services.Configure<SaleOptions>(builder.Configuration.GetSection("SaleSettings"));
 builder.Services.Configure<IterationOptions>(builder.Configuration.GetSection("IterationSettings"));
 builder.Services.AddScoped<ISaleRepository, SaleRepository>();
@@ -48,6 +61,7 @@ builder.Services.AddSwaggerGen();
 
 // Configure the HTTP request pipeline.
 var app = builder.Build();
+app.UseCors("DefaultPolicy");
 app.MapControllers();
 app.UseOpenApi();
 app.UseOpenApi();

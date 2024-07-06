@@ -2,12 +2,20 @@ import React, { useState } from "react";
 import '../app-chart/app-chart.css';
 import { hasLength, isNotEmpty, useForm } from "@mantine/form";
 import { Button, Flex, Select } from "@mantine/core";
-import { DatePickerInput } from "@mantine/dates";
+import { DatePickerInput, DatesProvider } from "@mantine/dates";
 import AppGraph from './graph';
+import { SaleClient } from "../../client/app-sale-client.ts";
+import { SaleInterval } from "../../enums/SaleInterval.ts";
+import { SalesDayInterval } from "../../services/sale-day-interval.ts";
+import { SalesWeekInterval } from "../../services/sale-week-interval.ts";
+import { SalesMonthInterval } from "../../services/sale-month-interval.ts";
+import { SalesQuarterInterval } from "../../services/sale-quarter-interval.ts";
 
 
 const AppChart = () => {
-    const [typeDisplay, setTypeDisplay] = useState("flex");
+    const [none, flex] = ['none', 'flex'];
+    const [typeDisplay, setTypeDisplay] = useState(none);
+    const [data, setData] = useState([]);
     const sales = useForm({
         mode: 'uncontrolled',
         initialValues: {
@@ -28,10 +36,33 @@ const AppChart = () => {
             direction={'column'}
             align={'center'}>
                 <form onSubmit={sales.onSubmit((values) => {
-                    setTypeDisplay('flex');
-                    console.log(values.period);
-                    console.log(values.startPeriod);
-                    console.log(values.endPeriod);
+                    const saleClient = new SaleClient();
+                    saleClient.getSalesByPeriod(values.startPeriod, values.endPeriod)
+                        .then((response) => {
+                            let sales = [];
+                            let saleInterval;
+                            switch(values.period) {
+                                case SaleInterval.Day:
+                                    saleInterval = new SalesDayInterval();
+                                    break;
+                                case SaleInterval.Week:
+                                    saleInterval = new SalesWeekInterval();
+                                    break;
+                                case SaleInterval.Month:
+                                    saleInterval = new SalesMonthInterval();
+                                    break;
+                                default:
+                                    saleInterval = new SalesQuarterInterval();
+                                    break;            
+                            }
+
+                            sales = saleInterval.getSales(response);
+                            setData(sales);
+                            setTypeDisplay(flex);
+                        })
+                        .catch((error) => {
+                            console.dir(error);
+                        });
                 })}>
                     <Flex
                         gap={'md'}
@@ -39,29 +70,36 @@ const AppChart = () => {
                         <Select
                             label='Time Period'
                             placeholder="pick value"
-                            data={['Day', 'Week', 'Month', 'Quarter']}
+                            data={[SaleInterval.Day, SaleInterval.Week, SaleInterval.Month, SaleInterval.Quarter]}
                             key={sales.key('period')}
                             {... sales.getInputProps('period')}
                             withAsterisk
                             clearable/>
-                        <DatePickerInput
-                            label="Start date"
-                            placeholder="Pick date"
-                            withAsterisk
-                            key={sales.key('startPeriod')}
-                            {... sales.getInputProps('startPeriod')}
-                            className="date"
-                            clearable
-                        />
-                        <DatePickerInput
-                            label="End date"
-                            placeholder="Pick date"
-                            withAsterisk
-                            key={sales.key('endPeriod')}
-                            {... sales.getInputProps('endPeriod')}
-                            className="date"
-                            clearable
-                        />
+                        <DatesProvider
+                            settings={{timezone: 'UTC'}}>
+                            <DatePickerInput
+                                __timezoneApplied
+                                label="Start date"
+                                placeholder="Pick date"
+                                withAsterisk
+                                key={sales.key('startPeriod')}
+                                {... sales.getInputProps('startPeriod')}
+                                className="date"
+                                clearable
+                            />
+                        </DatesProvider>
+                        <DatesProvider
+                            settings={{timezone: 'UTC'}}>
+                            <DatePickerInput
+                                label="End date"
+                                placeholder="Pick date"
+                                withAsterisk
+                                key={sales.key('endPeriod')}
+                                {... sales.getInputProps('endPeriod')}
+                                className="date"
+                                clearable
+                            />
+                        </DatesProvider>
                         <Flex
                             justify={'center'}
                             style={{marginTop: '13px'}}>
@@ -76,7 +114,7 @@ const AppChart = () => {
                 direction={'column'}
                 gap={'xs'}
                 display={typeDisplay}>
-                <AppGraph />
+                <AppGraph salesData={data}/>
                 <Button
                     style={{width: '15%', marginLeft: '80px', marginBottom: '20px'}}
                     >Reset Zoom</Button>
