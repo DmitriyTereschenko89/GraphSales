@@ -2,7 +2,6 @@
 using AutoMapper;
 using GraphSales.Api.DataTransferObjects;
 using GraphSales.Domain.Common;
-using GraphSales.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GraphSales.Api.Controllers

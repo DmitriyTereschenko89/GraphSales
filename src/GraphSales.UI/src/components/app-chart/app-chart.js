@@ -3,7 +3,7 @@ import '../app-chart/app-chart.css';
 import { hasLength, isNotEmpty, useForm } from "@mantine/form";
 import { Button, Flex, Select } from "@mantine/core";
 import { DatePickerInput, DatesProvider } from "@mantine/dates";
-import AppGraph from './graph';
+import AppGraph from './graph.tsx';
 import { SaleClient } from "../../client/app-sale-client.ts";
 import { SaleInterval } from "../../enums/SaleInterval.ts";
 import { SalesDayInterval } from "../../services/sale-day-interval.ts";
@@ -57,6 +57,7 @@ const AppChart = () => {
                             }
 
                             sales = saleInterval.getSales(response);
+                            console.log(sales);
                             setData(sales);
                             setTypeDisplay(flex);
                         })
@@ -111,13 +112,8 @@ const AppChart = () => {
                     </Flex>
                 </form>
             <Flex 
-                direction={'column'}
-                gap={'xs'}
                 display={typeDisplay}>
-                <AppGraph salesData={data}/>
-                <Button
-                    style={{width: '15%', marginLeft: '80px', marginBottom: '20px'}}
-                    >Reset Zoom</Button>
+                <AppGraph salesData={data}/>                
             </Flex> 
                
         </Flex>        

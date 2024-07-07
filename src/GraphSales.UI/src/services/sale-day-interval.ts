@@ -23,7 +23,7 @@ export class SalesDayInterval implements Interval {
                 sales.push(new Sale(Math.round(this.dotPoint * sale.amount) / this.dotPoint, curDate, dayjs(curDate).format("MM/DD/YYYY"), Math.round(this.dotPoint * sale.amount) / this.dotPoint));
             }
         });
-
+        debugger;
         return sales;
     }    
 }
