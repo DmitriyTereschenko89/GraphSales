@@ -8,9 +8,11 @@ namespace GraphSales.Data.Identity
     {
         private readonly SaleDbContext _context = context;
 
-        public List<SaleModel> GetSalesByPeriod(DateTimeOffset startPeriod, DateTimeOffset endPeriod)
+        public async Task<List<SaleModel>> GetSalesByPeriodAsync(DateTimeOffset startPeriod, DateTimeOffset endPeriod)
         {
-            return [.. _context.Sales.AsNoTracking().Where(sale => sale.Finalized.Date >= startPeriod.Date && sale.Finalized.Date <= endPeriod.Date)];
+            var sales = await Task.Run(() => _context.Sales.AsNoTracking().Where(sale => sale.Finalized.Date >= startPeriod.Date && sale.Finalized.Date <= endPeriod.Date).ToList());
+
+            return sales;
         }
 
         public async Task SaveSalesAsync(IList<SaleModel> sales)

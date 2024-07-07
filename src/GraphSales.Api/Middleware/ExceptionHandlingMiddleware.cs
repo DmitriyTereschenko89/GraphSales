@@ -1,8 +1,7 @@
-﻿namespace GraphSales.Api.Middleware
-{
-    using GraphSales.Api.Exceptions;
-    using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
+namespace GraphSales.Api.Middleware
+{
     public class ExceptionHandlingMiddleware(RequestDelegate next, ILogger<ExceptionHandlingMiddleware> logger)
     {
         private readonly RequestDelegate _next = next;
@@ -27,8 +26,6 @@
             {
                 ArgumentException => StatusCodes.Status400BadRequest,
                 UnauthorizedAccessException => StatusCodes.Status401Unauthorized,
-                ForbiddenException => StatusCodes.Status403Forbidden,
-                ItemsNotFoundException => StatusCodes.Status404NotFound,
                 KeyNotFoundException => StatusCodes.Status404NotFound,
                 NotImplementedException => StatusCodes.Status501NotImplemented,
                 _ => StatusCodes.Status500InternalServerError

@@ -4,7 +4,7 @@ namespace GraphSales.Domain.Common
 {
     public interface ISaleService
     {
-        List<SaleModel> GetSalesByPeriod(DateTimeOffset startPeriod, DateTimeOffset endPeriod);
+        Task<List<SaleModel>> GetSalesByPeriodAsync(DateTimeOffset startPeriod, DateTimeOffset endPeriod);
         Task SaveSalesAsync(IList<SaleModel> sales);
     }
 }

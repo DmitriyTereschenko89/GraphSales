@@ -7,9 +7,9 @@ namespace GraphSales.Infrastructure.Services
     {
         private readonly ISaleRepository _saleRepository = saleRepository;
 
-        public List<SaleModel> GetSalesByPeriod(DateTimeOffset startPeriod, DateTimeOffset endPeriod)
+        public async Task<List<SaleModel>> GetSalesByPeriodAsync(DateTimeOffset startPeriod, DateTimeOffset endPeriod)
         {
-            return _saleRepository.GetSalesByPeriod(startPeriod, endPeriod);
+            return await _saleRepository.GetSalesByPeriodAsync(startPeriod, endPeriod);
         }
 
         public async Task SaveSalesAsync(IList<SaleModel> sales)

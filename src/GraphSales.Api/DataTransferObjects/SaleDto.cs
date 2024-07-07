@@ -1,8 +1,7 @@
-﻿namespace GraphSales.Domain.Entities
+﻿namespace GraphSales.Api.DataTransferObjects
 {
-    public class SaleModel
+    public class SaleDto
     {
-        public int Id { get; set; }
         public decimal Amount { get; set; }
         public DateTimeOffset Finalized { get; set; }
     }
