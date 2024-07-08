@@ -8,9 +8,12 @@ export class SalesQuarterInterval implements Interval {
 
     getSales(response: any): Sale[] {
         const sales: any = [];
+        if (response.length === 0) {
+            return sales;
+        }
+
         let lastDate = new Date(response[0].finalized);
         lastDate.setMonth(lastDate.getMonth() + this.saleMonthStep);
-        debugger;
         response.forEach((sale: Sale) => {
             const curDate = new Date(sale.finalized);
 
