@@ -8,6 +8,10 @@ export class SalesMonthInterval implements Interval {
 
     getSales(response: any): Sale[] {
         const sales: any = [];
+        if (response.length === 0) {
+            return sales;
+        }
+        
         let lastDate = new Date(response[0].finalized);
         lastDate.setMonth(lastDate.getMonth() + this.saleMonthStep);
         response.forEach((sale: Sale) => {
