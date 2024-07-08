@@ -7,23 +7,20 @@ export class SalesDayInterval implements Interval {
 
     getSales(response: any): Sale[] {
         const sales: any = [];
-        let salesPerPeriod = 1;
         response.forEach((sale: Sale) => {
             const lastSale: any = sales.at(-1);
             const date = new Date(sale.finalized);
             
             if (sales.length > 0 && lastSale.finalized.getTime() === date.getTime()) {
-                salesPerPeriod++;
                 sales.at(-1).amount = Math.round(this.dotPoint * (sales.at(-1).amount + sale.amount)) / this.dotPoint;
-                sales.at(-1).averageSale = Math.round(sales.at(-1).amount / salesPerPeriod * this.dotPoint) / this.dotPoint;
+                sales.at(-1).totalSales += 1;
             }
             else {
-                salesPerPeriod = 1
                 const curDate = new Date(sale.finalized);
-                sales.push(new Sale(Math.round(this.dotPoint * sale.amount) / this.dotPoint, curDate, dayjs(curDate).format("MM/DD/YYYY"), Math.round(this.dotPoint * sale.amount) / this.dotPoint));
+                sales.push(new Sale(Math.round(this.dotPoint * sale.amount) / this.dotPoint, curDate, dayjs(curDate).format("MM/DD/YYYY"), 1));
             }
         });
-        debugger;
+        
         return sales;
     }    
 }
