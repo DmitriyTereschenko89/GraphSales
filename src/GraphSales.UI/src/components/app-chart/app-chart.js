@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import '../app-chart/app-chart.css';
 import { hasLength, isNotEmpty, useForm } from "@mantine/form";
-import { Button, Flex, Select } from "@mantine/core";
+import { Button, Flex, Loader, Select, Title, Text, Dialog, rem } from "@mantine/core";
 import { DatePickerInput, DatesProvider } from "@mantine/dates";
+import { IconExclamationCircle } from "@tabler/icons-react";
 import AppGraph from './graph.tsx';
 import { SaleClient } from "../../client/app-sale-client.ts";
 import { SaleInterval } from "../../enums/SaleInterval.ts";
@@ -14,6 +15,10 @@ import { SalesQuarterInterval } from "../../services/sale-quarter-interval.ts";
 
 const AppChart = () => {
     const [none, flex] = ['none', 'flex'];
+    const [opened, setOpened] = useState(false);
+    const [popupText] = ['An unexpected error occurred, please try again later.'];
+    const [loader, setLoader] = useState(none);
+    const [noData, setNoData] = useState(none);
     const [typeDisplay, setTypeDisplay] = useState(none);
     const [data, setData] = useState([]);
     const sales = useForm({
@@ -35,11 +40,37 @@ const AppChart = () => {
             flex={1}
             direction={'column'}
             align={'center'}>
+                <Dialog 
+                    bg={'red'}
+                    opened={opened}
+                    size={'md'} 
+                    radius={'md'}
+                    position={{ top: 20, right: 20}}
+                    transitionProps={{transform: 0, duration: 200}}
+                    style={{border:'0.5px solid rgba(232, 237, 242, 0.3)'}}>
+                <Flex
+                justify={'center'}>
+                        <IconExclamationCircle 
+                            style={{width: rem(30), height: rem(30), color: '#E8EDF2'}}/>
+                        <Text
+                            c={'#E8EDF2'} 
+                            align='center'
+                            size="sm" 
+                            mb="xs" 
+                            fw={500}>
+                            {popupText}
+                        </Text>
+                    </Flex>
+                </Dialog>
                 <form onSubmit={sales.onSubmit((values) => {
+                    setTypeDisplay(none);
+                    setNoData(none);
+                    setLoader(flex);
                     const saleClient = new SaleClient();
                     saleClient.getSalesByPeriod(values.startPeriod, values.endPeriod)
                         .then((response) => {
                             let sales = [];
+                            setData(sales);
                             let saleInterval;
                             switch(values.period) {
                                 case SaleInterval.Day:
@@ -55,16 +86,26 @@ const AppChart = () => {
                                     saleInterval = new SalesQuarterInterval();
                                     break;            
                             }
-
+                            
                             sales = saleInterval.getSales(response);
-                            console.log(sales);
-                            setData(sales);
-                            setTypeDisplay(flex);
+                            setLoader(none);
+                            if (sales.length === 0) {
+                                setNoData(flex);
+                            }
+                            else {
+                                setData(sales);
+                                setTypeDisplay(flex);
+                            }
                         })
                         .catch((error) => {
-                            console.dir(error);
+                            console.log(error);
+                            setLoader(none);
+                            setOpened(true);
+                            setTimeout(() => {
+                                setOpened(false);
+                            }, 5000);
                         });
-                })}>
+                    })}>
                     <Flex
                         gap={'md'}
                         >
@@ -111,8 +152,18 @@ const AppChart = () => {
                         </Flex>
                     </Flex>
                 </form>
+            <Flex
+                display={noData}
+                style={{position: "relative", top: "50%", transform: "translateY(400%)"}}>
+                <Title size={'h2'}>No data to show.</Title>
+            </Flex>    
+            <Flex
+                style={{position: "relative", top: "50%", transform: "translateY(200%)"}}
+                display={loader}>
+                <Loader type={"oval"} size={100} />
+            </Flex>    
             <Flex 
-                display={typeDisplay}>
+                display={typeDisplay}>                
                 <AppGraph salesData={data}/>                
             </Flex> 
                
