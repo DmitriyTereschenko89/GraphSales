@@ -46,7 +46,7 @@ sales: transaction itself, date of transaction closing
   ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/cb283ef9-3019-4bd7-8708-18525b12dd98) 
 11. Data for quarter
 
-  ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/8483a312-2487-4934-9e91-7aff2c1bc86f)
+   ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/8483a312-2487-4934-9e91-7aff2c1bc86f)
 12. No data
 
   ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/05ef7a35-52ce-4d0d-9832-817431c036bc)
