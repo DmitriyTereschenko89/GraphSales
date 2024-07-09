@@ -2,7 +2,7 @@
 Applications for displaying sales graph with total amount and number of sales by periods (day, week, month, quarter)
 sales: transaction itself, date of transaction closing
 
-#### Backend: .Net 8, Automapper, EF Core
+#### Backend: .Net 8.0, Automapper, EF Core 8.0
 #### Frontend: React, Mantine, Recharts
 
 #### How to run:
