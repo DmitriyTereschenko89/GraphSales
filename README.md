@@ -7,9 +7,9 @@ Frontend: react, mantine, recharts
 
 How to run:
 1. download repository git clone https://github.com/DmitriyTereschenko89/GraphSales.git
-2. in the GraphSales.Api change the server name in the connection string in the appsettings.json file
+2. in the GraphSales.Api change the server name in the connection string in the `appsettings.json file`
 3. run the api
-4. in terminal run npm start from the root of graphsales.ui
+4. in terminal run `npm start` from the root of `graphsales.ui`
    
 Application demo:
 1. 10000 data from 01.01.2012 to 12.31.2023 will be generated at the first access.
