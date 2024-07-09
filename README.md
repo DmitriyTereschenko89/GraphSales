@@ -2,16 +2,16 @@
 Applications for displaying sales graph with total amount and number of sales by periods (day, week, month, quarter)
 sales: transaction itself, date of transaction closing
 
-#### Backend: .Net 8, Automapper, EF Core is a modern object-database
+#### Backend: .Net 8, Automapper, EF Core
 #### Frontend: React, Mantine, Recharts
 
 #### How to run:
 1. Download repository `git clone https://github.com/DmitriyTereschenko89/GraphSales.git`
 2. Change the server name in the connection string in the `src/GraphSales.Api/appsettings.json file`
 3. Run `src/GraphSales.Api/`
-4. Api url `[http://localhost:5159/swagger/index.html](http://localhost:5159)`
+4. Api url http://localhost:5159/swagger/index.html
 5. Go to `src/GraphSales.UI` folder and run `npm start` command
-6. UI url `http://localhost:3000/`
+6. UI url http://localhost:3000/
    
 #### Application demo:
 1. Swagger
