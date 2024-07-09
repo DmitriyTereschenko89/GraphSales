@@ -2,8 +2,8 @@
 Applications for displaying sales graph with total amount and number of sales by periods (day, week, month, quarter)
 sales: transaction itself, date of transaction closing
 
-Backend: .Net 8, automapper, ef core
-Frontend: react, mantine, recharts
+### Backend: .Net 8, automapper, ef core
+### Frontend: react, mantine, recharts
 
 How to run:
 1. Download repository `git clone https://github.com/DmitriyTereschenko89/GraphSales.git`
@@ -21,17 +21,17 @@ Application demo:
 4. Empty field handling
   ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/30d7db62-7b48-41b2-bd78-b95ee754755b)
 5. Show data for day period from 02.01.2017 to 05.09.2017
-  ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/fd0f69e1-53b3-47aa-9db7-ae232623a9e1)
+  ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/822c4fb7-208d-4292-94c4-831e4b0215bd)
 6. Zoom graph
-  ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/3869dea6-6c83-44da-b65a-891a3da1706e)
+  ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/5597e381-8625-47bf-81a4-d23cb1fd148b)
 7. Data for week
-  ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/644ac60e-e80a-4df2-afc1-6b43f22ef444)
+  ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/11098027-4ba7-47e0-a15f-c0744d945b2c)
 8. Data for month
-  ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/8ffc2fba-22c1-4c86-b687-593523e1e8c3)
+  ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/cb283ef9-3019-4bd7-8708-18525b12dd98)
 9. Data for quarter
-  ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/90262cd9-cc58-4c34-88ad-0d67d73df47f)
+  ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/8483a312-2487-4934-9e91-7aff2c1bc86f)
 10. No data
-  ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/38c8e277-678c-4269-a4f9-c64c83bf9b5e)
+  ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/05ef7a35-52ce-4d0d-9832-817431c036bc)
 
 
 
