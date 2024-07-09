@@ -12,6 +12,7 @@ sales: transaction itself, date of transaction closing
 4. Go to `src/GraphSales.UI` folder and run `npm start` command
    
 #### Application demo:
+1. Contains data from 01.01.2012 to 12.31.2023
 1. Main page
    ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/3f071c0a-e953-45a5-89db-7f5f70ec1883)
 2. Spinner
