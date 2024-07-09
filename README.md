@@ -14,7 +14,7 @@ sales: transaction itself, date of transaction closing
 6. Go to http://localhost:3000/ to open the web app 
    
 #### Application demo:
-1. Swagger
+1. Swagger UI
    
    ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/63e493ac-bd7e-492f-a335-3b1dbc5101b2)
    ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/d08e11af-ecee-4f5b-a629-5e35b5b69af7)
