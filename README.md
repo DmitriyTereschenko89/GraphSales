@@ -7,7 +7,7 @@ sales: transaction itself, date of transaction closing
 
 #### How to run:
 1. Download repository `git clone https://github.com/DmitriyTereschenko89/GraphSales.git`
-2. Change the server name in the connection string in the `src/GraphSales.Api/appsettings.json file`
+2. Change the connection string in the `src/GraphSales.Api/appsettings.json file`
 3. Run `src/GraphSales.Api/`
 4. Api url http://localhost:5159/swagger/index.html
 5. Go to `src/GraphSales.UI` folder and run `npm start` command
