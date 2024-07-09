@@ -31,7 +31,7 @@ sales: transaction itself, date of transaction closing
 5. Empty field handling
 
    ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/30d7db62-7b48-41b2-bd78-b95ee754755b)
-6. Data by day period from 02.01.2017 to 05.09.2017
+6. Shows data by day period from 02.01.2017 to 05.09.2017
 
    ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/822c4fb7-208d-4292-94c4-831e4b0215bd)
 7. Zoom graph
