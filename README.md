@@ -1,6 +1,7 @@
 # GraphSales
 applications for displaying sales graph with total amount and number of sales by periods (day, week, month, quarter)
 sales: transaction itself, date of transaction closing
+
 Backend: .Net 8, automapper, ef core
 Frontend: react, mantine, recharts
 
