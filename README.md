@@ -2,16 +2,16 @@
 Applications for displaying sales graph with total amount and number of sales by periods (day, week, month, quarter)
 sales: transaction itself, date of transaction closing
 
-### Backend: .Net 8, automapper, ef core
-### Frontend: react, mantine, recharts
+#### Backend: .Net 8, automapper, ef core
+#### Frontend: react, mantine, recharts
 
-How to run:
+#### How to run:
 1. Download repository `git clone https://github.com/DmitriyTereschenko89/GraphSales.git`
 2. Change the server name in the connection string in the `src/GraphSales.Api/appsettings.json file`
 3. run `src/GraphSales.Api/`
 4. Go to `src/GraphSales.UI` folder and run `npm start` command
    
-Application demo:
+#### Application demo:
 1. Main page
    ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/3f071c0a-e953-45a5-89db-7f5f70ec1883)
 2. Spinner
