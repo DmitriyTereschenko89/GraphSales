@@ -30,20 +30,20 @@ sales: transaction itself, date of transaction closing
    
    ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/47dd6ae0-d51b-4a74-988f-ae2bfca122d1)
 6. Empty field handling
-   
-  ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/30d7db62-7b48-41b2-bd78-b95ee754755b)
+
+   ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/30d7db62-7b48-41b2-bd78-b95ee754755b)
 7. Show data for day period from 02.01.2017 to 05.09.2017
 
-  ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/822c4fb7-208d-4292-94c4-831e4b0215bd)
+   ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/822c4fb7-208d-4292-94c4-831e4b0215bd)
 8. Zoom graph
 
-  ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/5597e381-8625-47bf-81a4-d23cb1fd148b)
+   ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/5597e381-8625-47bf-81a4-d23cb1fd148b)
 9. Data for week
 
-  ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/11098027-4ba7-47e0-a15f-c0744d945b2c)
+   ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/11098027-4ba7-47e0-a15f-c0744d945b2c)
 10. Data for month
 
-  ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/cb283ef9-3019-4bd7-8708-18525b12dd98)
+  ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/cb283ef9-3019-4bd7-8708-18525b12dd98) 
 11. Data for quarter
 
   ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/8483a312-2487-4934-9e91-7aff2c1bc86f)
