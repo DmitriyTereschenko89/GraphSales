@@ -4,6 +4,6 @@
     {
         public int Id { get; set; }
         public decimal Amount { get; set; }
-        public DateTimeOffset Finalized { get; set; }
+        public DateTimeOffset FinalizedDate { get; set; }
     }
 }

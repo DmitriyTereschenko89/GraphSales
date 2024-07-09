@@ -10,7 +10,7 @@ namespace GraphSales.Api.Profiles
         {
             _ = CreateMap<SaleModel, SaleDto>()
                 .ForMember(dest => dest.Amount, opt => opt.MapFrom(sale => sale.Amount))
-                .ForMember(dest => dest.Finalized, opt => opt.MapFrom(sale => sale.Finalized.Date));
+                .ForMember(dest => dest.FinalizedDate, opt => opt.MapFrom(sale => sale.FinalizedDate.Date));
 
         }
     }

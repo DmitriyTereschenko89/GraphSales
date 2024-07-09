@@ -1,12 +1,12 @@
 export class Sale {
     amount: number;
-    finalized: Date;
+    finalizedDate: Date;
     formatDate: string;
     totalSales: number
     
-    constructor(amount: number, finalized: Date, formatDate: string, totalSales: number) {
+    constructor(amount: number, finalizedDate: Date, formatDate: string, totalSales: number) {
         this.amount = amount;
-        this.finalized = finalized;
+        this.finalizedDate = finalizedDate;
         this.formatDate = formatDate;
         this.totalSales = totalSales;
     }

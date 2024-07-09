@@ -3,6 +3,6 @@
     public class SaleDto
     {
         public decimal Amount { get; set; }
-        public DateTimeOffset Finalized { get; set; }
+        public DateTimeOffset FinalizedDate { get; set; }
     }
 }

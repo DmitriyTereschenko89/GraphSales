@@ -34,7 +34,7 @@ namespace GraphSales.Infrastructure.Services
             var sale = new SaleModel()
             {
                 Amount = amount,
-                Finalized = finalized
+                FinalizedDate = finalized
             };
 
             return sale;
