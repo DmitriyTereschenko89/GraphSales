@@ -15,7 +15,7 @@ export class SalesWeekInterval implements Interval {
         let lastDate = new Date(response[0].finalized);
         lastDate.setDate(lastDate.getDate() + this.saleDaysStep);
         response.forEach((sale: Sale) => {
-            const curDate = new Date(sale.finalized);
+            const curDate = new Date(sale.finalizedDate);
             
             if (sales.length > 0 && curDate.getTime() < lastDate.getTime()) {
                 sales.at(-1).amount = Math.round(this.dotPoint * (sales.at(-1).amount + sale.amount)) / this.dotPoint;

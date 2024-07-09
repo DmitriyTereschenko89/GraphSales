@@ -17,7 +17,7 @@ namespace GraphSales.Api.Controllers
         public async Task<List<SaleDto>> GetSalesByPeriod([Required] DateTimeOffset start, [Required] DateTimeOffset end)
         {
             var sales = await _saleService.GetSalesByPeriodAsync(start, end);
-            sales.Sort((a, b) => a.Finalized.Date.CompareTo(b.Finalized.Date));
+            sales.Sort((a, b) => a.FinalizedDate.Date.CompareTo(b.FinalizedDate.Date));
 
             return _mapper.Map<List<SaleDto>>(sales);
         }

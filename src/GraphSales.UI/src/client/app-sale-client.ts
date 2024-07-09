@@ -52,7 +52,7 @@ export class SaleClient {
 
 export interface SaleDto {
     amount: number;
-    finalized: Date;
+    finalizedDate: Date;
 }
 
 export class ApiException extends Error {
