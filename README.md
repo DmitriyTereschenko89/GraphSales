@@ -37,19 +37,19 @@ sales: transaction itself, date of transaction closing
 8. Data by day period from 02.01.2017 to 05.09.2017
 
    ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/822c4fb7-208d-4292-94c4-831e4b0215bd)
-9. Zoom graph
+   9. Zoom graph
 
-   ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/5597e381-8625-47bf-81a4-d23cb1fd148b)
-10. Data by week
+      ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/5597e381-8625-47bf-81a4-d23cb1fd148b)
+   10. Data by week
 
-   ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/11098027-4ba7-47e0-a15f-c0744d945b2c)
-   10. Data by month
+      ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/11098027-4ba7-47e0-a15f-c0744d945b2c)
+   11. Data by month
 
      ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/cb283ef9-3019-4bd7-8708-18525b12dd98) 
-   11. Data by quarter
+   12. Data by quarter
 
       ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/8483a312-2487-4934-9e91-7aff2c1bc86f)
-   12. No data
+   13. No data
 
      ![image](https://github.com/DmitriyTereschenko89/GraphSales/assets/120090144/05ef7a35-52ce-4d0d-9832-817431c036bc)
 
