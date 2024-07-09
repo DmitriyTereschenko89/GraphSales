@@ -5,7 +5,7 @@ const Footer = () => {
         <Flex
             justify="center"
             align="center">
-            <Title order={3} size='h4'>@2024Graph Sales</Title>
+            <Title order={3} size='h4'>&copy; 2024 Dmitriy Tereschenko</Title>
         </Flex>
     )
 }
